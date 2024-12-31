@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with PDF</title>
+    <link rel="stylesheet" href="./static/app.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Upload PDF 📁</h2>
+        <div class="upload-section">
+            <label for="pdf_files" class="upload-label">Drag and drop files here</label>
+            <input type="file" id="pdf_files" name="pdf_files" multiple onchange="displayPDFNames()">
+            <ul id="uploaded_files_list" style="list-style-type: none; padding: 0; margin-top: 10px; color: #ffcc00;"></ul>
+            <button class="btn" onclick="processPDF()">Process PDF</button>
+            <p id="processing_status" style="margin-top: 10px; color: #4caf50;"></p>
+        </div>
+    </div>
+    <div class="chat-area">
+        <h1>Chat with PDF</h1>
+        <div class="chat-input">
+            <input type="text" id="question" name="question" placeholder="Ask a relevant question..." required>
+            <button onclick="askQuestion()">Submit</button>
+        </div>
+        <div class="response-area" id="response">
+            <p>The answer will appear here.</p>
+        </div>
+    </div>
+
+    <script src="./static/app.js"></script>
+</body>
+</html>
